@@ -1,0 +1,29 @@
+CREATE 
+FUNCTION 
+ dbo.udf_GetColonistsCount(@PlanetName VARCHAR(30))
+RETURNS INT
+AS
+BEGIN
+
+DECLARE @count INT=  
+        
+               (SELECT colCount
+			   FRoM
+
+                (
+				          SELECT Count(*) as colCount,p.Name as plName
+                          FROM TravelCards tc
+                          JOIN Journeys j ON tc.JourneyId=j.Id
+                          JOIN Spaceports sp on j.DestinationSpaceportId=sp.Id
+                          JOIN Planets p ON sp.PlanetId=p.Id
+                          GROUP BY p.Name
+				  )as query
+				  WHERE plName=@PlanetName)
+
+IF(@count IS NULL)
+
+RETURN 0
+
+RETURN @count
+
+END
