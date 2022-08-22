@@ -1,0 +1,6 @@
+Select p.Name,COUNT(*) as cou
+From Journeys j
+JOIN Spaceports sp ON j.DestinationSpaceportId=sp.Id
+Join Planets p On sp.PlanetId=p.Id
+GROUP BY p.Name
+ORDER BY cou DESC,p.Name
