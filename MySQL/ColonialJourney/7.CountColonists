@@ -1,0 +1,8 @@
+SELECT Count(*)
+FROM TravelCards
+where JourneyId IN
+
+                   (
+                    SELECT Id
+                    FROM Journeys
+                    where Purpose='Technical') 
