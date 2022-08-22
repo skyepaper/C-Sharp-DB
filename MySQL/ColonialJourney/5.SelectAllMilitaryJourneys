@@ -1,0 +1,7 @@
+SELECT id,
+	       Format(JourneyStart,'dd/MM/yyyy') AS JStart,
+		   Format(JourneyEnd,'dd/MM/yyyy') AS JEnd
+From Journeys 
+WHERE Purpose ='Military'
+
+ORDER BY JourneyStart
