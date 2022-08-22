@@ -1,0 +1,8 @@
+select sp.Name,sp.Manufacturer
+From TravelCards tc
+Join Colonists c ON tc.ColonistId=c.Id
+Join Journeys j ON tc.JourneyId=j.Id
+Join Spaceships sp on j.SpaceshipId=sp.Id
+
+where tc.JobDuringJourney='Pilot' AND DATEDIFF(Year, c.BirthDate, '2019/01/01')<30
+ORDER BY sp.Name Asc
