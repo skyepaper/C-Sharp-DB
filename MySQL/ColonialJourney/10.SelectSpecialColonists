@@ -1,0 +1,17 @@
+select JobDuringJourney,CONCAT(FirstName,' ',LastName),rank
+from (
+
+              SELECT c.FirstName, 
+			         c.LastName,
+					 c.BirthDate,
+                     tc.JobDuringJourney,
+	                 dense_rank() over (partition by tc.JobDuringJourney order by c.BirthDate ) as rank
+              FROM TravelCards tc
+              JOIN Colonists c ON tc.ColonistId=c.Id
+              GROUP BY tc.JourneyId,
+			           c.FirstName, 
+			         c.LastName,
+                     tc.JobDuringJourney,
+					  c.BirthDate
+      )as rankQuerry
+	  where rankQuerry.rank=2
