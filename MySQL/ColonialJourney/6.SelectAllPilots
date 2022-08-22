@@ -1,0 +1,5 @@
+SELECT DISTINCT tc.ColonistId,CONCAT(c.FirstName,' ',c.LastName)
+FROM TravelCards tc
+JOIN Colonists c ON tc.ColonistId=c.Id
+where JobDuringJourney='Pilot'
+ORDER BY tc.ColonistId 
