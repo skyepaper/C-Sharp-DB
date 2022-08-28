@@ -117,48 +117,55 @@ Upon correct import logic, you should have imported 70 books.
 
 ### JSON Import  
 **Import Authors**  
-Using the file authors.json, import the data from that file into the database. Print information about each imported object in the format described below.
-Constraints
-⦁	If any validation errors occur (such as invalid first name, last name, email or phone), do not import any part of the entity and append an error message to the method output.
-⦁	If an email exists, do not import the author and append and error message.
-⦁	If a book does not exist in the database, do not append an error message and continue with the next book.
-⦁	If an author have zero books (all books are invalid) do not import the author and append an error message to the method output.
-Success message
+Using the file authors.json, import the data from that file into the database.   
+Print information about each imported object in the format described below.  
+
+**Constraints**
+- If any validation errors occur (such as invalid first name, last name, email or phone),  
+  do not import any part of the entity and append an error message to the method output.
+- If an email exists, do not import the author and append and error message.
+- If a book does not exist in the database, do not append an error message and continue with the next book.  
+- If an author have zero books (all books are invalid) do not import the author 
+ and append an error message to the method output.
+ 
+**Success message**  
 Successfully imported author - {first name + last name} with {booksCount} books.
-Example
-authors.json
-[
-  {
-    "FirstName": "K",
-    "LastName": "Tribbeck",
-    "Phone": "808-944-5051",
-    "Email": "btribbeck0@last.fm",
-    "Books": [
-      {
-        "Id": 79
-      },
-      {
-        "Id": 40
-      }
-    ]
-  },
-  {
-    "FirstName": "Maridel",
-    "LastName": "N",
-    "Phone": "658-437-4751",
-    "Email": "mdeamaya1@theatlantic.com",
-    "Books": [
-      {
-        "Id": 117
-      },
-      {
-        "Id": 88
-      }
-    ]
-  },
-  ...
-]
-Output
+
+**Example**  
+authors.json  
+[  
+&nbsp;&nbsp;&nbsp;&nbsp;{  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"FirstName": "K",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"LastName": "Tribbeck",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Phone": "808-944-5051",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Email": "btribbeck0@last.fm",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Books": [  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Id": 79  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Id": 40  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]  
+&nbsp;&nbsp;&nbsp;&nbsp;},  
+&nbsp;&nbsp;&nbsp;&nbsp;{  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"FirstName": "Maridel",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"LastName": "N",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Phone": "658-437-4751",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Email": "mdeamaya1@theatlantic.com",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Books": [  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Id": 117  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Id": 88  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]   
+&nbsp;&nbsp;&nbsp;&nbsp;},  
+  ...  
+]  
+  
+**Output**
 Invalid data!
 Invalid data!
 Invalid data!
