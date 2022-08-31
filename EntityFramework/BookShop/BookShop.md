@@ -182,88 +182,95 @@ Use the provided methods in the Serializer class. Usage of Data Transfer Objects
 
 ### JSON Export  
 **Export Most Craziest Authors**  
-Select all authors along with their books. Select their name in format first name + ' ' + last name. For each book select its name and price formatted to the second digit after the decimal point. Order the books by price in descending order. Finally sort all authors by book count descending and then by author full name.
-NOTE: Before the orders, materialize the query (This is issue by Microsoft in InMemory database library)!!!
-Example
+Select all authors along with their books. Select their name in format   
+first name + ' ' + last name. For each book select its name and price   
+formatted to the second digit after the decimal point. Order the books   
+by price in descending order. Finally sort all authors by book count   
+descending and then by author full name.  
+**NOTE**: Before the orders, materialize the query (This is issue by Microsoft in InMemory database library)!!!  
+**Example**  
 Serializer.ExportMostCraziestAuthors(context)
-[
-  {
-    "AuthorName": "Angelina Tallet",
-    "Books": [
-      {
-        "BookName": "Allen Fissidens Moss",
-        "BookPrice": "78.44"
-      },
-      {
-        "BookName": "Earlyleaf Brome",
-        "BookPrice": "63.66"
-      },
-      {
-        "BookName": "Sky Mousetail",
-        "BookPrice": "13.14"
-      },
-      {
-        "BookName": "Arrowleaf Clover",
-        "BookPrice": "1.71"
-      }
-    ]
-  },
-  {
-    "AuthorName": "Ashia Esh",
-    "Books": [
-      {
-        "BookName": "Twoflower Melicgrass",
-        "BookPrice": "29.06"
-      },
-      {
-        "BookName": "Sky Mousetail",
-        "BookPrice": "13.14"
-      },
-      {
-        "BookName": "Candle Tree",
-        "BookPrice": "9.00"
-      },
-      {
-        "BookName": "Arrowleaf Clover",
-        "BookPrice": "1.71"
-      }
-    ]
-  },
-  ...
-]
+[  
+&nbsp;&nbsp;&nbsp;&nbsp;{  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"AuthorName": "Angelina Tallet",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Books": [  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BookName": "Allen Fissidens Moss",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BookPrice": "78.44"  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BookName": "Earlyleaf Brome",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BookPrice": "63.66"  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BookName": "Sky Mousetail",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BookPrice": "13.14"  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BookName": "Arrowleaf Clover",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BookPrice": "1.71"  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]  
+&nbsp;&nbsp;&nbsp;&nbsp;},  
+&nbsp;&nbsp;&nbsp;&nbsp;{  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"AuthorName": "Ashia Esh",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Books": [  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BookName": "Twoflower Melicgrass",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BookPrice": "29.06"  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BookName": "Sky Mousetail",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BookPrice": "13.14"  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BookName": "Candle Tree",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BookPrice": "9.00"  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BookName": "Arrowleaf Clover",  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"BookPrice": "1.71"  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]  
+&nbsp;&nbsp;&nbsp;&nbsp;},  
+...  
+]  
 
 ### XML Export  
 **Export Oldest Books**  
-Export top 10 oldest books that are published before the given date and are of type science. For each book select its name, date (in format "d") and pages. Sort them by pages in descending order and then by date in descending order.
-NOTE: Before the orders, materialize the query (This is issue by Microsoft in InMemory database library)!!!
-Example
-Serializer.ExportOldestBooks(context, date)
-<?xml version="1.0" encoding="utf-16"?>
-<Books>
-  <Book Pages="4881">
-    <Name>Sierra Marsh Fern</Name>
-    <Date>03/18/2016</Date>
-  </Book>
-  <Book Pages="4786">
-    <Name>Little Elephantshead</Name>
-    <Date>12/16/2014</Date>
-  </Book>
-  <Book Pages="3245">
-    <Name>Airplant</Name>
-    <Date>11/24/2016</Date>
-  </Book>
-  <Book Pages="3039">
-    <Name>Palo Blanco</Name>
-    <Date>06/25/2014</Date>
-  </Book>
-  <Book Pages="3013">
-    <Name>Hairy Torchwood</Name>
-    <Date>01/13/2013</Date>
-  </Book>
-  <Book Pages="1870">
-    <Name>Bigelow's Monkeyflower</Name>
-    <Date>11/20/2015</Date>
-  </Book>
-...
-</Books>
+Export top 10 oldest books that are published before the given   
+date and are of type science. For each book select its name, date   
+(in format "d") and pages. Sort them by pages in descending order and then bydate in descending order.  
+**NOTE**: Before the orders, materialize the query   
+(This is issue by Microsoft in InMemory database library)!!!  
+**Example**  
+Serializer.ExportOldestBooks(context, date)  
+\<?xml version="1.0" encoding="utf-16"?>  
+\<Books>  
+&nbsp;&nbsp;&nbsp;&nbsp;\<Book Pages="4881">  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<Name>Sierra Marsh Fern\</Name>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<Date>03/18/2016\</Date>  
+&nbsp;&nbsp;&nbsp;&nbsp;\</Book>  
+&nbsp;&nbsp;&nbsp;&nbsp;\<Book Pages="4786">  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<Name>Little Elephantshead\</Name>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<Date>12/16/2014\</Date>  
+&nbsp;&nbsp;&nbsp;&nbsp;\</Book>  
+&nbsp;&nbsp;&nbsp;&nbsp;\<Book Pages="3245">  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<Name>Airplant\</Name>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<Date>11/24/2016\</Date>  
+&nbsp;&nbsp;&nbsp;&nbsp;\</Book>  
+&nbsp;&nbsp;&nbsp;&nbsp;\<Book Pages="3039">  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<Name>Palo Blanco\</Name>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<Date>06/25/2014\</Date>  
+&nbsp;&nbsp;&nbsp;&nbsp;\</Book>  
+&nbsp;&nbsp;&nbsp;&nbsp;\<Book Pages="3013">  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<Name>Hairy Torchwood\</Name>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<Date>01/13/2013\</Date>  
+&nbsp;&nbsp;&nbsp;&nbsp;\</Book>  
+&nbsp;&nbsp;&nbsp;&nbsp;\<Book Pages="1870">  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<Name>Bigelow's Monkeyflower\</Name>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<Date>11/20/2015\</Date>  
+&nbsp;&nbsp;&nbsp;&nbsp;\</Book>  
+...  
+\</Books>  
 
